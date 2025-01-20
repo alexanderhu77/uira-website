@@ -53,11 +53,15 @@ class Header extends HTMLElement {
               <li><a href="about.html">About</a></li>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="posterdayarchive.html">Poster Day Archive</a></li>
+              <li><a href="recent.html">Recent Events</a></li>
               <li><a href="https://forms.gle/3kmusUSjUaAQ7LQo6" target="_blank">Stay Updated!</a></li>
               </ul>
           </nav>
         </header>
       `;
+
+      
+
     }
   }
   
