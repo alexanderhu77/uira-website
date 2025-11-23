@@ -7,14 +7,14 @@ class Footer extends HTMLElement {
       this.innerHTML = `
         <style>
           footer {
-            position: absolute:
+            width: 100%;
             height: 60px;
             padding: 0 10px;
-            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #F5F2EE;
+            box-sizing: border-box;
           }
           
           ul li {

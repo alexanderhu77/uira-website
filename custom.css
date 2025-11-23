@@ -48,9 +48,20 @@ header {
 
 .grid-container-founders {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px 100px;
     padding: 10px;
+}
+
+.grid-container-alumni {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
 }
 
 .formpage {
