@@ -55,13 +55,8 @@ header {
 
 .grid-container-alumni {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: auto;
 }
 
 .formpage {
