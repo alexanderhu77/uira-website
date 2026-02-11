@@ -85,7 +85,6 @@ class Header extends HTMLElement {
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
               <li class="dropdown">
                 <a>Poster Day Archive</a>
                 <div class="dropdown-content">
