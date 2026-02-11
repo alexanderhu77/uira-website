@@ -12,6 +12,10 @@ body {
     margin: auto;
 }
 
+header-component {
+    display: block;
+}
+
 footer-component {
     display: none;
 }
@@ -87,7 +91,7 @@ header {
     overflow: hidden;
     float: right;
     margin: 30px;
-    margin-top: 120px;
+    margin-top: 150px;
     border-radius: 30px;
 }
 

@@ -16,7 +16,7 @@ class Header extends HTMLElement {
 
 
           h3 {
-            margin-left: 50px;
+            margin-left: 20px;
             font-size: 25px;
           }
 
@@ -77,10 +77,23 @@ class Header extends HTMLElement {
             margin-left: 30px;
           }
 
+          .logo-link {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            position: relative;
+            z-index: 10;
+          }
+          .logo-link:hover {
+            padding-bottom: 0;
+            box-shadow: none;
+          }
+
         </style>
         <header>
           <nav>
-            <img src="images/uiralogo.PNG" class="headerlogo">
+            <a class="logo-link" href="index.html"><img src="images/uiralogo.PNG" class="headerlogo" alt="UIRA logo"></a>
             <h3>UIRA @ UCLA</h3>
             <ul>
               <li><a href="index.html">Home</a></li>
