@@ -12,6 +12,14 @@ body {
     margin: auto;
 }
 
+/* Override deprecated <font size="..."> so our CSS controls all font sizes */
+font {
+    font-size: inherit !important;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+
 header-component {
     display: block;
 }
@@ -42,8 +50,87 @@ header {
     margin-top: 8vh;
 }
 
+.hero .hero-text {
+    width: 100%;
+}
+
+.container.hero {
+    padding-bottom: 12px;
+}
+
+.container.plans-with-image {
+    padding-top: 12px;
+}
+
+.plans-with-image {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.plans-with-image .plans-text {
+    flex: 0 1 55%;
+    min-width: 200px;
+    max-width: 50%;
+}
+
+.plans-with-image .plans-text p {
+    margin-left: 0;
+    padding-left: 0;
+    text-indent: 0;
+}
+
+.plans-with-image .plans-text p i {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.plans-with-image #imagecontainer {
+    flex: 1 1 auto;
+    min-width: 320px;
+    max-width: 520px;
+}
+
+.plans-with-image .groupphoto {
+    float: none;
+    max-width: 100%;
+    margin: 0;
+}
+
 .page.home {
     margin-top: 3vh;
+}
+
+.page h1,
+.page .notice {
+    font-size: 48px;
+}
+.page h2 {
+    font-size: 48px;
+}
+.page h3 {
+    font-size: 20px;
+}
+.page h4 {
+    font-size: 18px;
+}
+.page p,
+.page p font {
+    font-size: 24px;
+}
+
+.page p a {
+    font-size: inherit;
+    font-weight: inherit;
+    color: blue;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.page p a:hover {
+    text-decoration: none;
 }
 
 .headshot {
@@ -193,4 +280,105 @@ header {
   align-items: center;
   width: 100%;
   margin: 100px auto;
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .page {
+    max-width: 100%;
+    margin: 12px 16px;
+    overflow-x: hidden;
+  }
+
+  .page.home {
+    margin-top: 12px;
+  }
+
+  .container {
+    padding: 12px 16px;
+    max-width: 100%;
+  }
+
+  .hero .hero-text,
+  .plans-with-image .plans-text {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .page h1,
+  .page .notice {
+    font-size: 18px;
+    line-height: 1.35;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .page h2 {
+    font-size: 16px;
+  }
+
+  .page h3 {
+    font-size: 16px;
+  }
+
+  .page h4 {
+    font-size: 16px;
+  }
+
+  .page p,
+  .page p font {
+    font-size: 15px !important;
+  }
+
+  .page p,
+  .page h1,
+  .page h2,
+  .page h3 {
+    line-height: 1.45;
+  }
+
+  .plans-with-image {
+    flex-direction: column;
+  }
+
+  .plans-with-image #imagecontainer {
+    max-width: 100%;
+  }
+
+  .groupphoto {
+    float: none;
+    max-width: 100%;
+    margin: 20px 0;
+  }
+
+  .grid-container,
+  .grid-container-founders,
+  .grid-container-alumni {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: auto;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .instagram-post {
+    margin: 40px auto;
+    padding: 0 10px;
+  }
+
+  .pa-gallery-player-widget {
+    max-width: 100%;
+  }
 }

@@ -90,16 +90,75 @@ class Header extends HTMLElement {
             box-shadow: none;
           }
 
+          .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            padding: 8px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+          }
+          .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #333;
+          }
+          @media (max-width: 768px) {
+            .hamburger {
+              display: flex;
+              margin-right: 20px;
+            }
+            .nav-links {
+              display: none;
+              position: absolute;
+              top: 10vh;
+              left: 0;
+              right: 0;
+              flex-direction: column;
+              background: #F5F2EE;
+              padding: 20px;
+              margin: 0;
+              box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            nav.nav-open .nav-links {
+              display: flex;
+            }
+            .nav-links li {
+              margin: 10px 0;
+            }
+            .nav-links a {
+              margin: 0;
+            }
+            .nav-open .dropdown .dropdown-content {
+              position: static;
+              display: none;
+              box-shadow: none;
+              padding-left: 15px;
+            }
+            .nav-open .dropdown.open .dropdown-content {
+              display: flex;
+            }
+          }
+
         </style>
         <header>
           <nav>
             <a class="logo-link" href="index.html"><img src="images/uiralogo.PNG" class="headerlogo" alt="UIRA logo"></a>
             <h3>UIRA @ UCLA</h3>
-            <ul>
+            <button class="hamburger" type="button" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="about.html">About</a></li>
               <li class="dropdown">
-                <a>Poster Day Archive</a>
+                <a class="dropdown-toggle">Poster Day Archive</a>
                 <div class="dropdown-content">
                   <a href="posterday2024.html">2024</a>
                   <!--  <a href="posterday2025.html">2025</a>  -->
@@ -113,8 +172,27 @@ class Header extends HTMLElement {
         </header>
       `;
 
-      
+      const nav = this.querySelector('nav');
+      const hamburger = this.querySelector('.hamburger');
+      const navLinks = this.querySelector('.nav-links');
+      const dropdownToggle = this.querySelector('.dropdown-toggle');
 
+      hamburger.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+      });
+
+      dropdownToggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          this.querySelector('.dropdown').classList.toggle('open');
+        }
+      });
+
+      navLinks.querySelectorAll('a:not(.dropdown-toggle)').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 768) nav.classList.remove('nav-open');
+        });
+      });
     }
   }
   
