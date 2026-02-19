@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UIRA @ UCLA - Event Photos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/uiralogo.PNG">
+    <script src="components/Header.js" type="text/javascript" defer></script>
+    <script src="components/Footer.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="custom.css">
+  </head>
+  <header-component></header-component>
+  <body>
+    <div class="page events-gallery-page">
+      <h2>Event Photos</h2>
+      <p>Select an event on the timeline to see photos from it.</p>
+
+      <div class="events-roadmap" id="events-roadmap"></div>
+    </div>
+
+    <!--
+      Event Photos dev note:
+      - Update album links in components/events-gallery.js -> EVENTS[*].albumUrl
+      - Replace placeholder icon UI in components/events-gallery.js -> PlaceholderBadge()
+      - Add a stop by appending to EVENTS and STOP_POSITIONS (x, y, cardSide) so the badge sits on the route
+    -->
+
+    <div id="album-modal" class="album-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="album-modal-overlay"></div>
+      <div class="album-modal-panel">
+        <div class="album-modal-header">
+          <h3 id="modal-title" class="album-modal-title"></h3>
+          <button type="button" class="album-modal-close" aria-label="Close">×</button>
+        </div>
+        <div class="album-modal-body" id="album-modal-body">
+          <div class="album-widget-container" id="album-widget-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="components/events-gallery.js" type="text/javascript" defer></script>
+  </body>
+  <footer-component></footer-component>
+</html>
