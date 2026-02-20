@@ -403,7 +403,6 @@ header {
   position: relative;
   background: var(--uira-light-brown);
   border-radius: 28px;
-  border: 1.5px solid var(--uira-ink-55);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   padding: 1.1rem;
@@ -412,7 +411,6 @@ header {
 .events-map-shell {
   position: relative;
   border-radius: 22px;
-  border: 1px solid rgba(37, 150, 190, 0.2);
   background: rgba(245, 240, 236, 0.28);
   overflow: hidden;
 }
@@ -588,6 +586,11 @@ header {
   transform: translateX(-50%) translateY(-3px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
   border-color: var(--uira-purple);
+}
+
+.event-stop.below .event-card:hover,
+.event-stop.below .event-card:focus-within {
+  transform: translateX(-50%) translateY(3px);
 }
 
 .event-stop.is-active .event-card {

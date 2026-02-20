@@ -162,10 +162,9 @@
     activeIndex = index;
     var stops = roadmapEl.querySelectorAll('.event-stop');
     Array.prototype.forEach.call(stops, function (stop, stopIndex) {
-      var isActive = stopIndex === index;
-      stop.classList.toggle('is-active', isActive);
+      stop.classList.toggle('is-active', stopIndex === index);
     });
-    centerStop(index);
+    if (index >= 0) centerStop(index);
   }
 
   function setupParallax() {
@@ -241,7 +240,7 @@
 
     setupDragScroll();
     setupParallax();
-    updateActive(0);
+    updateActive(-1);
   }
 
   function getFocusables(container) {
@@ -305,11 +304,19 @@
 
     roadmapEl.addEventListener('click', function (e) {
       var stop = e.target.closest('.event-stop[data-stop-index]');
-      if (!stop) return;
-      var index = parseInt(stop.getAttribute('data-stop-index'), 10);
-      if (isNaN(index)) return;
-      updateActive(index);
-      openModal(index);
+      if (stop) {
+        var index = parseInt(stop.getAttribute('data-stop-index'), 10);
+        if (!isNaN(index)) {
+          if (index === activeIndex) {
+            updateActive(-1);
+          } else {
+            updateActive(index);
+            openModal(index);
+          }
+        }
+        return;
+      }
+      if (activeIndex >= 0) updateActive(-1);
     });
   }
 
