@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Undergraduate Interdisciplinary Research Association at UCLA Website - Recent Events</title>
+    <title>UIRA @ UCLA - Recent Events</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/images/uiralogo.PNG">
     <script src="components/Header.js" type="text/javascript" defer></script>
     <script src="components/Footer.js" type="text/javascript" defer></script>
     <script src="https://kit.fontawesome.com/b3c273f133.js" crossorigin="anonymous"></script>
-    
-    <!-- <script src="https://kit.fontawesome.com/b3c273f133.js" crossorigin="anonymous"></script> -->
-    <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"> -->
     <link rel="stylesheet" href="custom.css">
   </head>
-  
   <body>
     <header-component></header-component>
+
+    <div class="page">
+      <h2>Recent Events</h2>
+      <p>Select an event on the timeline to see photos from it.</p>
+      <div class="events-roadmap" id="events-roadmap"></div>
+    </div>
+
+    <div id="album-modal" class="album-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="album-modal-overlay"></div>
+      <div class="album-modal-panel">
+        <div class="album-modal-header">
+          <h3 id="modal-title" class="album-modal-title"></h3>
+          <button type="button" class="album-modal-close" aria-label="Close">×</button>
+        </div>
+        <div class="album-modal-body" id="album-modal-body">
+          <div class="album-widget-container" id="album-widget-container"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="instagram-post">
       <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DUW3d1TDx0R/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"></blockquote>
       <script async src="//www.instagram.com/embed.js"></script>
     </div>
+
+    <script src="components/events-gallery.js" type="text/javascript" defer></script>
     <footer-component></footer-component>
   </body>
 </html>

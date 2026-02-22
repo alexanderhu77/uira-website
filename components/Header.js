@@ -165,7 +165,6 @@ class Header extends HTMLElement {
                 </div>
               </li>
               <li><a href="recent.html">Recent Events</a></li>
-              <li><a href="events-gallery.html">Event Photos</a></li>
               <!-- <li><a href="future_events.html">Future Events</a></li> -->
               <li><a href="https://forms.gle/3kmusUSjUaAQ7LQo6" target="_blank">Stay Updated!</a></li>
               </ul>
