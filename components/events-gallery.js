@@ -1,22 +1,24 @@
 (function () {
   'use strict';
 
-  /* Chronological order (earliest first). Index matches embeds/album-0 … album-4. */
+  /* Chronological order (earliest first). Index matches embeds/album-0 … album-5. */
   var EVENTS = [
     { title: 'First Poster Day', date: 'May 2024', albumUrl: 'https://photos.app.goo.gl/HfHtHXT8jaWCyt9f6' },
     { title: 'Routes to Research', date: 'Nov 2024', albumUrl: 'https://photos.app.goo.gl/HNBGiexuvRjoDZHDA' },
     { title: 'Lightning Talks', date: 'Mar 2025', albumUrl: 'https://photos.app.goo.gl/sp9jomFerB2taL9b7' },
     { title: 'Poster Day', date: 'May 2025', albumUrl: 'https://photos.app.goo.gl/KY988Nd3q1KomEzn8' },
-    { title: 'Routes to Research', date: 'Jan 2026', albumUrl: 'https://photos.app.goo.gl/Qpkd84Y32MwZLiER7' }
+    { title: 'Routes to Research', date: 'Jan 2026', albumUrl: 'https://photos.app.goo.gl/Qpkd84Y32MwZLiER7' },
+    { title: 'Bites & Breakthroughs', date: 'Mar 2026', albumUrl: 'https://photos.app.goo.gl/QhSXKxDpvM2N38QLA' }
   ];
 
-  /* x/y coordinates place badges directly on the route in a 1280x390 canvas. */
+  /* x/y coordinates place badges on the route. 6 stops across 1280px canvas. */
   var STOP_POSITIONS = [
-    { x: 130, y: 200, cardSide: 'above' },
-    { x: 360, y: 200, cardSide: 'below' },
-    { x: 610, y: 200, cardSide: 'above' },
-    { x: 870, y: 200, cardSide: 'below' },
-    { x: 1130, y: 200, cardSide: 'above' }
+    { x: 110, y: 200, cardSide: 'above' },
+    { x: 310, y: 200, cardSide: 'below' },
+    { x: 510, y: 200, cardSide: 'above' },
+    { x: 710, y: 200, cardSide: 'below' },
+    { x: 910, y: 200, cardSide: 'above' },
+    { x: 1110, y: 200, cardSide: 'below' }
   ];
 
   var PAW_PRINTS = [
@@ -32,7 +34,8 @@
     { left: '92%', top: '30%', rotate: 16, scale: 1.18 }
   ];
 
-  var ROUTE_PATH_D = 'M 70 205 C 180 165, 280 165, 360 205 C 450 245, 530 245, 610 205 C 700 165, 780 165, 870 205 C 955 240, 1040 240, 1130 205 C 1185 185, 1230 185, 1260 205';
+  /* SVG path passes through STOP_POSITIONS x-coords; control points align with 6-stop wave. */
+  var ROUTE_PATH_D = 'M 70 205 C 110 205, 270 165, 310 205 C 350 245, 470 245, 510 205 C 550 165, 670 165, 710 205 C 750 245, 870 245, 910 205 C 950 165, 1070 165, 1110 205 C 1140 185, 1230 185, 1260 205';
 
   var roadmapEl = document.getElementById('events-roadmap');
   var modal = document.getElementById('album-modal');
