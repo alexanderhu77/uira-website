@@ -162,6 +162,7 @@ class Header extends HTMLElement {
                 <div class="dropdown-content">
                   <a href="posterday2024.html">2024</a>
                   <a href="posterday2025.html">2025</a>
+                  <a href="posterday2026.html">2026</a>
                 </div>
               </li>
               <li><a href="recent.html">Recent Events</a></li>
