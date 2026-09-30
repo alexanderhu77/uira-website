@@ -161,7 +161,7 @@ class Header extends HTMLElement {
                 <a class="dropdown-toggle">Poster Day Archive</a>
                 <div class="dropdown-content">
                   <a href="posterday2024.html">2024</a>
-                  <!--  <a href="posterday2025.html">2025</a>  -->
+                  <a href="posterday2025.html">2025</a>
                 </div>
               </li>
               <li><a href="recent.html">Recent Events</a></li>
